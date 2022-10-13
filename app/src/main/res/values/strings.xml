@@ -4,5 +4,12 @@
     <string name="title_app_name">ДИСПЕТЧЕР</string>
     <string name="title_login">ВХОД</string>
     <string name="btn_login">ВОЙТИ</string>
-    <string name="company_logo">Логотип компании</string>
+    <string name="link_login">Войти</string>
+    <string name="company_logo">ЛОГОТИП КОМПАНИИ</string>
+    <string name="hint_login_input_email">ВВЕДИТЕ ПОЧТУ</string>
+    <string name="hint_login_input_password">ВВЕДИТЕ ПАРОЛЬ</string>
+    <string name="link_login_registration">РЕГИСТРАЦИЯ</string>
+    <string name="title_registration">РЕГИСТРАЦИЯ</string>
+    <string name="hint_registration_confirm_password">ПОДТВЕРДИТЕ ПАРОЛЬ</string>
+    <string name="btn_continue">ПРОДОЛЖИТЬ</string>
 </resources>

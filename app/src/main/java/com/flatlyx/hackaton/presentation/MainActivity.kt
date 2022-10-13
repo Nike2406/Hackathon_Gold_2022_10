@@ -1,7 +1,8 @@
-package com.flatlyx.hackaton
+package com.flatlyx.hackaton.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.flatlyx.hackaton.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

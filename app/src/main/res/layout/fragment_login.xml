@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    style="@style/StyleRootLayout">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,66 +15,40 @@
 
         <ImageView
             android:id="@+id/ivLoginLogo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            style="@style/StyleMainLogo"
             android:contentDescription="@string/company_logo"
             android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/tvTitleLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:elevation="4dp"
-            android:text="@string/title_login"
-            android:textColor="#2B2E2D"
-            android:textSize="24sp"
-            android:viewportWidth="200" />
+            style="@style/StyleTitleLogging"
+            android:text="@string/title_login" />
 
         <EditText
             android:id="@+id/etLoginEmail"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/border"
-            android:hint="@string/hint_login_input_email"
-            android:textSize="12sp"
+            style="@style/StyleEditTextLogging"
             android:autofillHints="emailAddress"
+            android:hint="@string/hint_login_input_email"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/etLoginPassword"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/border"
-            android:hint="@string/hint_login_input_password"
-            android:textSize="12sp"
+            style="@style/StyleEditTextLogging"
             android:autofillHints="password"
-            android:inputType="textPassword"/>
+            android:hint="@string/hint_login_input_password"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="155dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#1C1D1B"
-            android:gravity="center"
+            style="@style/StyleButtonLogging"
             android:text="@string/btn_login"
-            android:textSize="11sp"
             app:icon="@drawable/ic_arrow_1"
             app:iconGravity="textEnd" />
 
         <TextView
             android:id="@+id/btnLoginRegistration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F5F5F5"
-            android:gravity="center"
-            android:layout_marginTop="5dp"
-            android:padding="10dp"
+            style="@style/StyleTextViewLink"
             android:text="@string/link_login_registration"
-            android:textSize="16sp"
             app:iconGravity="textEnd" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

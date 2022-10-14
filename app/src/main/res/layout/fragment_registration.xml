@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/StyleRootLayout">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivRegistrationLogo"
+            style="@style/StyleMainLogo"
+            android:contentDescription="@string/company_logo"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvTitleRegistration"
+            style="@style/StyleTitleLogging"
+            android:text="@string/title_registration" />
+
+        <EditText
+            android:id="@+id/etRegistrationEmail"
+            style="@style/StyleEditTextLogging"
+            android:autofillHints="emailAddress"
+            android:hint="@string/hint_login_input_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/etRegistrationPhoneNumber"
+            style="@style/StyleEditTextLogging"
+            android:autofillHints="phone"
+            android:hint="@string/hint_login_input_phone_number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/etRegistrationPassword"
+            style="@style/StyleEditTextLogging"
+            android:autofillHints="password"
+            android:hint="@string/hint_login_input_password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/etRegistrationConfirmPassword"
+            style="@style/StyleEditTextLogging"
+            android:autofillHints="password"
+            android:hint="@string/hint_registration_confirm_password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnRegistration"
+            style="@style/StyleButtonLogging"
+            android:layout_width="155dp"
+            android:layout_height="45dp"
+            android:text="@string/btn_continue"
+            app:icon="@drawable/ic_arrow_1"
+            app:iconGravity="textEnd" />
+
+        <TextView
+            android:id="@+id/btnRegistrationLogin"
+            style="@style/StyleTextViewLink"
+            android:text="@string/btn_login"
+            app:iconGravity="textEnd" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

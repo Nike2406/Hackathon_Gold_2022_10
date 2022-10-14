@@ -1,4 +1,4 @@
-package com.flatlyx.hackaton
+package com.flatlyx.hackathon
 
 import org.junit.Test
 

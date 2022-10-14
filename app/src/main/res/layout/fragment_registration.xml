@@ -62,7 +62,7 @@
             app:iconGravity="textEnd" />
 
         <TextView
-            android:id="@+id/btnRegistrationContinue"
+            android:id="@+id/btnRegistrationLogin"
             style="@style/StyleTextViewLink"
             android:text="@string/btn_login"
             app:iconGravity="textEnd" />

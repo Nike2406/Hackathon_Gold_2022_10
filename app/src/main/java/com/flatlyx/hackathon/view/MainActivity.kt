@@ -9,6 +9,7 @@ import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.ActivityMainBinding
 import com.flatlyx.hackathon.databinding.FragmentLoginBinding
 import com.flatlyx.hackathon.databinding.FragmentRegistrationBinding
+import com.yandex.mapkit.MapKitFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Ya.api
+        MapKitFactory.setApiKey("de65b04e-9dd7-4a8e-a97f-22d71032b780");
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.place_holder, LoginFragment.newInstance())

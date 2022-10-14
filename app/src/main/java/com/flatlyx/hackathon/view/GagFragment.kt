@@ -31,6 +31,15 @@ class GagFragment: Fragment() {
                     .commit()
             }
         }
+
+        binding.btnToMap.setOnClickListener {
+            activity?.let {
+                it.supportFragmentManager.beginTransaction()
+                    .replace(R.id.place_holder, MapFragment.newInstance())
+//                    .addToBackStack(null)
+                    .commit()
+            }
+        }
     }
 
     companion object {

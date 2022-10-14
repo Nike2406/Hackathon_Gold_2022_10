@@ -1,12 +1,14 @@
 package com.flatlyx.hackathon
 
-import androidx.test.platform.app.InstrumentationRegistry
+import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import com.flatlyx.hackathon.network.ApiBuilder
+import com.flatlyx.hackathon.network.ApiService
+import kotlinx.coroutines.*
+import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
+import java.lang.Thread.sleep
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -15,10 +17,18 @@ import org.junit.Assert.*
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
+
+    @OptIn(DelicateCoroutinesApi::class)
     @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.flatlyx.hackathon", appContext.packageName)
+    fun testApi() {
+        val quotesApi = ApiBuilder.getInstance().create(ApiService::class.java)
+        // launching a new coroutine
+        GlobalScope.launch {
+            val result = quotesApi.getQuotes()
+            val author = result.body()?.results?.get(0)?.author
+            Log.d("TEST: ", author.toString())
+            assertEquals("Michael Jordan", author)
+        }
+        sleep(2000)
     }
 }

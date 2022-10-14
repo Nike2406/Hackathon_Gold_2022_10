@@ -1,14 +1,9 @@
 package com.flatlyx.hackathon.view
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.ActivityMainBinding
-import com.flatlyx.hackathon.databinding.FragmentLoginBinding
-import com.flatlyx.hackathon.databinding.FragmentRegistrationBinding
 import com.yandex.mapkit.MapKitFactory
 
 class MainActivity : AppCompatActivity() {

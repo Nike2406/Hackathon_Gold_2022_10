@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.FragmentLoginBinding
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
 
     lateinit var binding: FragmentLoginBinding
 
@@ -27,6 +27,10 @@ class LoginFragment: Fragment() {
         binding.btnLogin.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, GagFragment.newInstance())
                     .addToBackStack(null)
                     .commit()
@@ -36,6 +40,10 @@ class LoginFragment: Fragment() {
         binding.btnLoginRegistration.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, RegistrationFragment.newInstance())
                     .addToBackStack(null)
                     .commit()

@@ -46,7 +46,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+    implementation 'com.google.android.material:material:1.6.1'
+
 	// Map
+    //implementation 'com.yandex.android:mapkit:3.5.0'
+    implementation 'com.yandex.android:maps.mobile:4.2.1-full'
+
+    // Map
     //implementation 'com.yandex.android:mapkit:3.5.0'
     implementation 'com.yandex.android:maps.mobile:4.2.1-full'
 

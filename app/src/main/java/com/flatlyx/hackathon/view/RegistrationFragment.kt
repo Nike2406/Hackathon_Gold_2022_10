@@ -26,6 +26,10 @@ class RegistrationFragment: Fragment() {
         binding.btnRegistration.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, GagFragment.newInstance())
                     .addToBackStack(null)
                     .commit()
@@ -35,6 +39,10 @@ class RegistrationFragment: Fragment() {
         binding.btnRegistrationLogin.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, LoginFragment.newInstance())
 //                    .addToBackStack(null)
                     .commit()

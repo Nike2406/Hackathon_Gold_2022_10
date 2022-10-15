@@ -26,6 +26,10 @@ class GagFragment: Fragment() {
         binding.btnExit.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, LoginFragment.newInstance())
 //                    .addToBackStack(null)
                     .commit()
@@ -35,6 +39,10 @@ class GagFragment: Fragment() {
         binding.btnToMap.setOnClickListener {
             activity?.let {
                 it.supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
                     .replace(R.id.place_holder, MapFragment.newInstance())
 //                    .addToBackStack(null)
                     .commit()
@@ -43,6 +51,7 @@ class GagFragment: Fragment() {
     }
 
     companion object {
+
         @JvmStatic
         fun newInstance() = GagFragment()
     }

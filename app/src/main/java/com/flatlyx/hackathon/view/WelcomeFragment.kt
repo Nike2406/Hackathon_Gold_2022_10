@@ -23,16 +23,16 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        Thread.sleep(1000)
-        activity?.let {
-            it.supportFragmentManager.beginTransaction()
+
+        view.postDelayed({
+            requireActivity().supportFragmentManager.beginTransaction()
                 .setCustomAnimations(
                     androidx.appcompat.R.anim.abc_fade_in,
                     androidx.appcompat.R.anim.abc_fade_out
                 )
                 .replace(R.id.place_holder, LoadingFragment.newInstance())
                 .commit()
-        }
+        }, 3000)
     }
 
     companion object {

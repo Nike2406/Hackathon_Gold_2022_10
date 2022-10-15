@@ -25,29 +25,25 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnLogin.setOnClickListener {
-            activity?.let {
-                it.supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(
-                        androidx.appcompat.R.anim.abc_fade_in,
-                        androidx.appcompat.R.anim.abc_fade_out
-                    )
-                    .replace(R.id.place_holder, GagFragment.newInstance())
-                    .addToBackStack(null)
-                    .commit()
-            }
+            requireActivity().supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out
+                )
+                .replace(R.id.place_holder, GagFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
         }
 
         binding.btnLoginRegistration.setOnClickListener {
-            activity?.let {
-                it.supportFragmentManager.beginTransaction()
-                    .setCustomAnimations(
-                        androidx.appcompat.R.anim.abc_fade_in,
-                        androidx.appcompat.R.anim.abc_fade_out
-                    )
-                    .replace(R.id.place_holder, RegistrationFragment.newInstance())
-                    .addToBackStack(null)
-                    .commit()
-            }
+            requireActivity().supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out
+                )
+                .replace(R.id.place_holder, RegistrationFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
         }
     }
 

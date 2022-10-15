@@ -17,23 +17,23 @@ class LoadingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLoadingBinding.inflate(inflater)
+        binding = FragmentLoadingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        AnimationUtils.loadAnimation(binding.root.context, R.anim.rotate)
-//        Thread.sleep(2000)
-        activity?.let {
-            it.supportFragmentManager.beginTransaction()
-                .setCustomAnimations(
-                    androidx.appcompat.R.anim.abc_fade_in,
-                    androidx.appcompat.R.anim.abc_fade_out
-                )
-                .replace(R.id.place_holder, LoginFragment.newInstance())
-                .commit()
-        }
+
+        view.postDelayed({
+            requireActivity().supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
+                    .replace(R.id.place_holder, LoginFragment.newInstance())
+                    .commit()
+            }, 3000
+        )
     }
 
     companion object {

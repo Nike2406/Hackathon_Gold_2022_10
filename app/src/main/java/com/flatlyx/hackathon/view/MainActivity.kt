@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                 androidx.appcompat.R.anim.abc_fade_in,
                 androidx.appcompat.R.anim.abc_fade_out
             )
-            .replace(R.id.place_holder, WelcomeFragment.newInstance())
+            .replace(R.id.place_holder, MapFragment.newInstance())
             .commit()
     }
 }

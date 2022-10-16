@@ -1,5 +1,6 @@
 package com.flatlyx.hackathon.network
 
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody
 import org.json.JSONObject
 import retrofit2.Retrofit
@@ -13,9 +14,12 @@ object ApiBuilder {
 
     fun get(): ApiService {
         if (instance == null) {
-            instance = Retrofit.Builder().baseUrl(baseUrl)
+            instance = Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .client(OkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ApiService::class.java)
+                .build()
+                .create(ApiService::class.java)
         }
         return instance!!
     }

@@ -13,6 +13,19 @@
     <string name="hint_registration_confirm_password">ПОДТВЕРДИТЕ ПАРОЛЬ</string>
     <string name="btn_continue">ПРОДОЛЖИТЬ</string>
     <string name="hint_login_input_phone_number">ВВЕДИТЕ НОМЕР ТЕЛЕФОНА</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_type_of_work">Вид работ</string>
+    <string name="description_type_of_work">Загрузка щебня, полевые</string>
+    <string name="call_to_deapatcher">Звонок\nдиспетчеру</string>
+    <string name="road_problem">Проблема\nв пути</string>
+    <string name="incorrect_road">Некорректный\nмаршрут</string>
+    <string name="title_road_timer">До прибытия на объект</string>
+    <string name="road_timer">10:00:00</string>
+    <string name="title_in_road_pa">Точка А</string>
+    <string name="description_in_road_pa">Набережная, 6, Казань</string>
+    <string name="title_in_road_pb">Точка Б</string>
+    <string name="description_in_road_pb">Абдрахманова, 15, Казань</string>
+    <string name="order">Заказ</string>
+    <string name="example_location_time">~1.5 часа</string>
+    <string name="example_address_order">Кошевого, 15 Казань</string>
+    <string name="title_order">Лесная поляна</string>
 </resources>

@@ -28,4 +28,5 @@
     <string name="example_location_time">~1.5 часа</string>
     <string name="example_address_order">Кошевого, 15 Казань</string>
     <string name="title_order">Лесная поляна</string>
+orders and     <string name="order_agree">ПРИНЯТЬ</string>
 </resources>

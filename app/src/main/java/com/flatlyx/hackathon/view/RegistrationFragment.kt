@@ -30,7 +30,7 @@ class RegistrationFragment: Fragment() {
                         androidx.appcompat.R.anim.abc_fade_in,
                         androidx.appcompat.R.anim.abc_fade_out
                     )
-                    .replace(R.id.place_holder, GagFragment.newInstance())
+                    .replace(R.id.place_holder, OrdersFragment.newInstance())
                     .addToBackStack(null)
                     .commit()
             }

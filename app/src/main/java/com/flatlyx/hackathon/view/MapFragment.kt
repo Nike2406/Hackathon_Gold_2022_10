@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.FragmentMapBinding
 import com.yandex.mapkit.Animation
 import com.yandex.mapkit.MapKitFactory
@@ -32,11 +33,16 @@ class MapFragment : Fragment() {
             null
         )
 
-        val mapPopupFragment = MapPopupFragment()
-        mapPopupFragment.show(
-            requireActivity().supportFragmentManager,
-            MapPopupFragment.TAG
-        )
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.place_holder_bottom, HeaderInfoMapFragment.newInstance())
+            .commit()
+
+//        val mapPopupFragment = MapPopupFragment()
+//        mapPopupFragment.show(
+//            requireActivity().supportFragmentManager,
+//            MapPopupFragment.TAG
+//        )
 
         return binding.root
     }

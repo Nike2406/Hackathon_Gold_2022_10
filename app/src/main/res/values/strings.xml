@@ -24,4 +24,8 @@
     <string name="description_in_road_pa">Набережная, 6, Казань</string>
     <string name="title_in_road_pb">Точка Б</string>
     <string name="description_in_road_pb">Абдрахманова, 15, Казань</string>
+    <string name="order">Заказ</string>
+    <string name="example_location_time">~1.5 часа</string>
+    <string name="example_address_order">Кошевого, 15 Казань</string>
+    <string name="title_order">Лесная поляна</string>
 </resources>

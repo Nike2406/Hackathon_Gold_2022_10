@@ -2,8 +2,7 @@ package com.flatlyx.hackathon
 
 import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.flatlyx.hackathon.network.ApiBuilder
-import com.flatlyx.hackathon.network.ApiService
+import com.flatlyx.hackathon.network.ApiRouter
 import kotlinx.coroutines.*
 import org.junit.Assert.*
 import org.junit.Test
@@ -20,15 +19,13 @@ class ExampleInstrumentedTest {
 
     @OptIn(DelicateCoroutinesApi::class)
     @Test
-    fun testApi() {
-        val quotesApi = ApiBuilder.getInstance().create(ApiService::class.java)
-        // launching a new coroutine
-        GlobalScope.launch {
-            val result = quotesApi.getQuotes()
-            val author = result.body()?.results?.get(0)?.author
+    fun testApi() = runBlocking {
+        val job = GlobalScope.launch {
+            val result = ApiRouter.driver(1)
+            val author = result.body()?.name
             Log.d("TEST: ", author.toString())
             assertEquals("Michael Jordan", author)
         }
-        sleep(2000)
+        job.join()
     }
 }

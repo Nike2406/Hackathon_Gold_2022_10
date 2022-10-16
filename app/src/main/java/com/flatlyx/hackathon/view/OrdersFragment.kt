@@ -22,6 +22,7 @@ class OrdersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         // RecyclerView of orders
         binding.rvOrdersGag.btnLAgree.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()

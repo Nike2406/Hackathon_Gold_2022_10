@@ -48,4 +48,27 @@
         <item name="android:padding">10dp</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="StyleLLInRoad">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="StyleInRoadButtons">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/circle_road_btn</item>
+    </style>
+
+    <style name="StyleInRoadTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:color">#000000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lines">2</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.flatlyx.hackathon.R
-import com.flatlyx.hackathon.databinding.FragmentWelcomeBinding
+import com.flatlyx.hackathon.databinding.FragmentLoadingBinding
 
-class WelcomeFragment : Fragment() {
+class LoadingFragment : Fragment() {
 
-    lateinit var binding: FragmentWelcomeBinding
+    private lateinit var binding: FragmentLoadingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentWelcomeBinding.inflate(inflater)
+        binding = FragmentLoadingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -26,18 +26,19 @@ class WelcomeFragment : Fragment() {
 
         view.postDelayed({
             requireActivity().supportFragmentManager.beginTransaction()
-                .setCustomAnimations(
-                    androidx.appcompat.R.anim.abc_fade_in,
-                    androidx.appcompat.R.anim.abc_fade_out
-                )
-                .replace(R.id.place_holder, LoadingFragment.newInstance())
-                .commit()
-        }, 3000)
+                    .setCustomAnimations(
+                        androidx.appcompat.R.anim.abc_fade_in,
+                        androidx.appcompat.R.anim.abc_fade_out
+                    )
+                    .replace(R.id.place_holder, LoginFragment.newInstance())
+                    .commit()
+            }, 3000
+        )
     }
 
     companion object {
 
         @JvmStatic
-        fun newInstance() = WelcomeFragment()
+        fun newInstance() = LoadingFragment()
     }
 }

@@ -16,10 +16,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Ya.api
-        MapKitFactory.setApiKey("de65b04e-9dd7-4a8e-a97f-22d71032b780");
+        MapKitFactory.setApiKey("de65b04e-9dd7-4a8e-a97f-22d71032b780")
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.place_holder, LoginFragment.newInstance())
+            .setCustomAnimations(
+                androidx.appcompat.R.anim.abc_fade_in,
+                androidx.appcompat.R.anim.abc_fade_out
+            )
+            .replace(R.id.place_holder, WelcomeFragment.newInstance())
+            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                androidx.appcompat.R.anim.abc_fade_in,
+                androidx.appcompat.R.anim.abc_fade_out
+            )
+            .replace(R.id.place_holder_bottom, HeaderInfoMapFragment.newInstance())
             .commit()
     }
 }

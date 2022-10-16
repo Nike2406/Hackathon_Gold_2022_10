@@ -6,42 +6,31 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.flatlyx.hackathon.R
-import com.flatlyx.hackathon.databinding.FragmentLoginBinding
+import com.flatlyx.hackathon.databinding.FragmentOrdersBinding
 
-class LoginFragment : Fragment() {
-
-    lateinit var binding: FragmentLoginBinding
+class OrdersFragment : Fragment() {
+    private lateinit var binding: FragmentOrdersBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLoginBinding.inflate(inflater)
+        binding = FragmentOrdersBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnLogin.setOnClickListener {
+        // RecyclerView of orders
+        binding.rvOrdersGag.btnLAgree.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .setCustomAnimations(
                     androidx.appcompat.R.anim.abc_fade_in,
                     androidx.appcompat.R.anim.abc_fade_out
                 )
-                .replace(R.id.place_holder, OrdersFragment.newInstance())
-                .addToBackStack(null)
-                .commit()
-        }
-
-        binding.btnLoginRegistration.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .setCustomAnimations(
-                    androidx.appcompat.R.anim.abc_fade_in,
-                    androidx.appcompat.R.anim.abc_fade_out
-                )
-                .replace(R.id.place_holder, RegistrationFragment.newInstance())
+                .replace(R.id.place_holder, MapFragment.newInstance())
                 .addToBackStack(null)
                 .commit()
         }
@@ -49,6 +38,6 @@ class LoginFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = LoginFragment()
+        fun newInstance() = OrdersFragment()
     }
 }

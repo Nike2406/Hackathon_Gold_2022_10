@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.FragmentGagBinding
 
-class GagFragment: Fragment() {
+class GagFragment : Fragment() {
 
     private lateinit var binding: FragmentGagBinding
 
@@ -24,25 +24,30 @@ class GagFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnExit.setOnClickListener {
-            activity?.let {
-                it.supportFragmentManager.beginTransaction()
-                    .replace(R.id.place_holder, LoginFragment.newInstance())
+            requireActivity().supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out
+                )
+                .replace(R.id.place_holder, LoginFragment.newInstance())
 //                    .addToBackStack(null)
-                    .commit()
-            }
+                .commit()
         }
 
         binding.btnToMap.setOnClickListener {
-            activity?.let {
-                it.supportFragmentManager.beginTransaction()
-                    .replace(R.id.place_holder, MapFragment.newInstance())
+            requireActivity().supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out
+                )
+                .replace(R.id.place_holder, MapFragment.newInstance())
 //                    .addToBackStack(null)
-                    .commit()
-            }
+                .commit()
         }
     }
 
     companion object {
+
         @JvmStatic
         fun newInstance() = GagFragment()
     }

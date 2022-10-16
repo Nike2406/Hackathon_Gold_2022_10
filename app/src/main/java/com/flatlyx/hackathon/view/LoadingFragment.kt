@@ -32,7 +32,7 @@ class LoadingFragment : Fragment() {
                     )
                     .replace(R.id.place_holder, LoginFragment.newInstance())
                     .commit()
-            }, 500
+            }, 3000
         )
     }
 

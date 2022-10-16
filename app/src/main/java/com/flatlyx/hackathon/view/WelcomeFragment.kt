@@ -32,7 +32,7 @@ class WelcomeFragment : Fragment() {
                 )
                 .replace(R.id.place_holder, LoadingFragment.newInstance())
                 .commit()
-        }, 500)
+        }, 3000)
     }
 
     companion object {

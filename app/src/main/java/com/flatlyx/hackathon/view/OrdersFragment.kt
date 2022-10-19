@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.flatlyx.hackathon.R
 import com.flatlyx.hackathon.databinding.FragmentOrdersBinding
+import com.flatlyx.hackathon.tempFillOrders.OrdersFactory
+import com.flatlyx.hackathon.view.recyclerViewOrders.OrdersAdapter
 
 class OrdersFragment : Fragment() {
     private lateinit var binding: FragmentOrdersBinding
+    private lateinit var ordersAdapter: OrdersAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +26,22 @@ class OrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // RecyclerView of orders
-        binding.rvOrdersGag.btnLAgree.setOnClickListener {
+        setupRecyclerView()
+        setupClickListener()
+
+        // Temp implementation of input data
+        val orders = OrdersFactory().createOrders()
+        ordersAdapter.submitList(orders)
+    }
+
+    private fun setupRecyclerView() {
+        val rvOrders = binding.rvOrders
+        ordersAdapter = OrdersAdapter()
+        rvOrders.adapter = ordersAdapter
+    }
+
+    private fun setupClickListener() {
+        ordersAdapter.onOrderClickListener = {
             requireActivity().supportFragmentManager.beginTransaction()
                 .setCustomAnimations(
                     androidx.appcompat.R.anim.abc_fade_in,
